@@ -1,22 +1,8 @@
 // Arquivo upado na placa Arduino
 
 int portas[8] = {5, 6, 7, 8, 9, 10, 11, 12};
-int digito0[8] = {1, 1, 1, 0, 1, 1, 1, 0};
-int digito1[8] = {1, 0, 0, 0, 0, 0, 1, 0};
-int digito2[8] = {1, 1, 0, 1, 1, 1, 0, 0};
-int digito3[8] = {1, 1, 0, 1, 0, 1, 1, 0};
-int digito4[8] = {1, 0, 1, 1, 0, 0, 1, 0};
-int digito5[8] = {0, 1, 1, 1, 0, 1, 1, 0};
-int digito6[8] = {0, 1, 1, 1, 1, 1, 1, 0};
-int digito7[8] = {1, 1, 0, 0, 0, 0, 1, 0};
-int digito8[8] = {1, 1, 1, 1, 1, 1, 1, 0};
-int digito9[8] = {1, 1, 1, 1, 0, 0, 1, 0};
-int ponto[8] = {0, 0, 0, 0, 0, 0, 0, 1};
-
 String mensagem = "";
 char caractere;
-int blink_ponto = 250;
-int blink_digito = 100;
 
 void setup() {
   Serial.begin(9600);
@@ -30,14 +16,16 @@ void loop() {
     mensagem = Serial.readString();
     for (int i = 0; i < 4; i++) {
       if (i == 2) {
-        for (int i = 0; i < 8; i++) {
-          digitalWrite(portas[i], ponto[i]);
-        }
-        delay(blink_ponto);
+        digitalWrite(12, HIGH);
+        delay(75);
+        digitalWrite(12, LOW);
+        delay(75);
+        digitalWrite(12, HIGH);
+        delay(100);
         for (int i = 0; i < 8; i++) {
           digitalWrite(portas[i], LOW);
         }
-        delay(blink_ponto);
+        delay(125);
       }
       caractere = mensagem[i];
       Serial.println(caractere);
@@ -49,104 +37,156 @@ void loop() {
 void switch_blink() {
   switch (caractere) {
     case '0':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito0[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(5, HIGH);
+      delay(125);
+      digitalWrite(11, HIGH);
+      delay(125);
+      digitalWrite(10, HIGH);
+      delay(125);
+      digitalWrite(9, HIGH);
+      delay(125);
+      digitalWrite(7, HIGH);
+      delay(125);
+      digitalWrite(6, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '1':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito1[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(5, HIGH);
+      delay(125);
+      digitalWrite(11, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '2':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito2[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(6, HIGH);
+      delay(125);
+      digitalWrite(5, HIGH);
+      delay(125);
+      digitalWrite(8, HIGH);
+      delay(125);
+      digitalWrite(9, HIGH);
+      delay(125);
+      digitalWrite(10, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '3':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito3[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(8, HIGH);
+      delay(125);
+      digitalWrite(5, HIGH);
+      digitalWrite(11, HIGH);
+      delay(125);
+      digitalWrite(6, HIGH);
+      digitalWrite(10, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '4':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito4[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(7, HIGH);
+      delay(125);
+      digitalWrite(8, HIGH);
+      delay(125);
+      digitalWrite(5, HIGH);
+      digitalWrite(11, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '5':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito5[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(6, HIGH);
+      delay(125);
+      digitalWrite(7, HIGH);
+      delay(125);
+      digitalWrite(8, HIGH);
+      delay(125);
+      digitalWrite(11, HIGH);
+      delay(125);
+      digitalWrite(10, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '6':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito6[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(6, HIGH);
+      delay(125);
+      digitalWrite(7, HIGH);
+      delay(125);
+      digitalWrite(9, HIGH);
+      delay(125);
+      digitalWrite(10, HIGH);
+      delay(125);
+      digitalWrite(11, HIGH);
+      delay(125);
+      digitalWrite(8, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '7':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito7[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(6, HIGH);
+      delay(125);
+      digitalWrite(5, HIGH);
+      delay(125);
+      digitalWrite(11, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '8':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito8[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(8, HIGH);
+      delay(125);
+      digitalWrite(5, HIGH);
+      digitalWrite(9, HIGH);
+      delay(125);
+      digitalWrite(6, HIGH);
+      digitalWrite(10, HIGH);
+      delay(125);
+      digitalWrite(7, HIGH);
+      digitalWrite(11, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
     case '9':
-      for (int i = 0; i < 8; i++) {
-        digitalWrite(portas[i], digito9[i]);
-      }
-      delay(blink_digito);
+      digitalWrite(8, HIGH);
+      delay(125);
+      digitalWrite(7, HIGH);
+      delay(125);
+      digitalWrite(6, HIGH);
+      delay(125);
+      digitalWrite(5, HIGH);
+      delay(125);
+      digitalWrite(11, HIGH);
+      delay(125);
+      digitalWrite(10, HIGH);
+      delay(250);
       for (int i = 0; i < 8; i++) {
         digitalWrite(portas[i], LOW);
       }
-      delay(blink_digito);
+      delay(125);
       break;
   }
 }
