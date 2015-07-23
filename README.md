@@ -9,6 +9,7 @@ Proposta:
 Para entrar em contato use o GitHub ou o email jhunu.fernandes@gmail.com
 -----------------------------------------------------------------
 Funcionamento:
+
   No Arduino:
     O controlador lê as informações de temperatura e umidade do sensor DHT11 e salva sob a forma de String. Recebe via Serial as informações das horas, também em String, e prepara o blink dos dígitos para transmitir a informação.
 
