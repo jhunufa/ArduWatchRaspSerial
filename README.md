@@ -7,7 +7,7 @@ Proposta:
   Projeto de um relógio com apenas um dígito controlado por Arduino e implementado em uma RaspPi via PySerial.
 
 Para entrar em contato use o GitHub ou o email jhunu.fernandes@gmail.com
------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Funcionamento:
 
   No Arduino:
@@ -18,7 +18,7 @@ Funcionamento:
 
   Na Raspberry:
     A Rasp roda o script em Python que lê as horas da própria placa e os transmite via Serial para o Arduino conectado na Rasp.
------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Componentes:
 
   1) Arduino ou equivalente com pelo menos 10 portas digitais (8 para o display e as 2 da comunicação serial: RX e TX)
@@ -30,7 +30,7 @@ Componentes:
   4) Comunicador FDTI (Opcional) caso sua placa não possua um embutido)
 
   5) Sensor DHT11 de temperatura e umidade
------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Montagem do circuito:
 
 1) Pinagem e montagem do Display:
@@ -50,7 +50,7 @@ Montagem do circuito:
   Obs: É altamente recomendável o uso de 8 resistências ao invés de 2 (uma em cada cátodo do display ao invés de uma em cada ânodo) para melhor controle de corrente e brilho constante do display.
 
 2) O sensor DHT11 liga-se na porta digital 13 (D13)
------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Interfaces:
 
   1) RaspPi-Python
