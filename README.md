@@ -51,9 +51,11 @@ A Rasp roda o script em Python que lê as horas da própria placa e os transmite
 -------------------
 #### Interfaces:
 
-  - ###### RaspPi-Python:
-    - Abre o arquivo .py no booting da máquina e o mantém aberto desde então
-  - ###### Python-Serial:
-    - Recebe informações da máquina via biblioteca Datetime acerca da hora no instante, manipula a informação e a transmite via biblioteca Serial sob a forma de String
-  - ###### Serial-Arduino:
-    - Recebe a informação e imprime, caractere por caractere, no display
+###### RaspPi-Python:
+ - Abre o arquivo .py no booting da máquina e o mantém aberto desde então
+
+###### Python-Serial:
+ - Recebe informações da máquina via biblioteca Datetime acerca da hora no instante, manipula a informação e a transmite via biblioteca Serial sob a forma de String
+
+###### Serial-Arduino:
+ - Recebe a informação e imprime, caractere por caractere, no display
